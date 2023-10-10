@@ -8,22 +8,22 @@ on:
 jobs:
   tests:
     runs-on: ubuntu-latest
-    env:
-      POSTGRES_DB: "electrochemistry_lab"
-      POSTGRES_HOST: localhost
-      POSTGRES_USER: "postgres"
-      POSTGRES_PASSWORD: "vrag"
-      POSTGRES_PORT: 5432
-      SECRET_KEY: ${{ env.POSTGRES_DB }}
-      ALLOWED_HOSTS: "*"
-    services:
-      postgres:
-        image: postgres:latest
-        env:
-          POSTGRES_DB: ${{ env.POSTGRES_DB }}
-          POSTGRES_USER: ${{ env.POSTGRES_USER }}
-          POSTGRES_PASSWORD: ${{ env.POSTGRES_PASSWORD }}
-          POSTGRES_PORT: ${{ env.POSTGRES_PORT }}
+#    env:
+#      POSTGRES_DB: "electrochemistry_lab"
+#      POSTGRES_HOST: localhost
+#      POSTGRES_USER: "postgres"
+#      POSTGRES_PASSWORD: "vrag"
+#      POSTGRES_PORT: 5432
+#      SECRET_KEY: ${{ env.POSTGRES_DB }}
+#      ALLOWED_HOSTS: "*"
+#    services:
+#      postgres:
+#        image: postgres:latest
+#        env:
+#          POSTGRES_DB: ${{ env.POSTGRES_DB }}
+#          POSTGRES_USER: ${{ env.POSTGRES_USER }}
+#          POSTGRES_PASSWORD: ${{ env.POSTGRES_PASSWORD }}
+#          POSTGRES_PORT: ${{ env.POSTGRES_PORT }}
 
     steps:
       - name: Check updates
