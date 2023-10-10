@@ -12,7 +12,7 @@ jobs:
       POSTGRES_DB: "electrochemistry_lab"
       POSTGRES_HOST: localhost
       POSTGRES_USER: "postgres"
-      POSTGRES_PASSWORD: "vrag"
+      POSTGRES_PASSWORD: "secret"
       POSTGRES_PORT: 5432
       SECRET_KEY: "e-jxsxv)1dww_fj72#t@7cuilv7up1&3d_$ylq7i=djbp@lfg6"
       ALLOWED_HOSTS: "localhost"
@@ -46,15 +46,15 @@ jobs:
       - name: 'Create env file'
         run: |
           touch .env
-          SECRET_KEY=${{ env.SECRET_KEY }}  >> .env
-          DEBUG=${{ env.DEBUG }}  >> .env
-          ALLOWED_HOSTS=${{ env.ALLOWED_HOSTS }}  >> .env
-          DB_ENGINE=${{ env.DB_ENGINE }}  >> .env
-          DB_NAME=${{ env.DB_NAME }}  >> .env
-          DB_HOST=${{ env.DB_HOST }}  >> .env
-          DB_PORT=${{ env.DB_PORT }}  >> .env
-          DB_USER=${{ env.DB_USER }}  >> .env
-          DB_PASSWORD=${{ env.DB_PASSWORD }}  >> .env
+          echo SECRET_KEY=${{ env.SECRET_KEY }}  >> .env
+          echo DEBUG=True >> .env
+          echo ALLOWED_HOSTS=${{ env.ALLOWED_HOSTS }}  >> .env
+          echo DB_ENGINE=django.db.backends.postgresql  >> .env
+          echo DB_NAME=${{ env.POSTGRES_DB }}  >> .env
+          echo DB_HOST=${{ env.POSTGRES_HOST }}  >> .env
+          echo DB_PORT=${{ env.POSTGRES_PORT }}  >> .env
+          echo DB_USER=${{ env.POSTGRES_USER }}  >> .env
+          echo DB_PASSWORD=${{ env.POSTGRES_PASSWORD }}  >> .env
           cat .env
 #
 #      - name: Testing
