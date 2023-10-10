@@ -46,7 +46,7 @@ jobs:
         run: flake8
 
       - name: Check Env
-        run: echo "SECRET_KEY:" ${{ secrets.SECRET_KEY }} | sed 's/./& /g'
+        run: echo "SECRET_KEY:" ${{ secrets.SECRET_KEY }}
 
 #      - name: Testing
 #        run: pytest
