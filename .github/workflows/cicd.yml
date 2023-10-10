@@ -49,9 +49,19 @@ jobs:
       - name: 'Create env file'
         run: |
           touch .env
-          echo SECRET_KEY="${{ secrets.SECRET_KEY }}" >> .env
-          echo DEBUG="${{ secrets.DEBUG }}" >> .env
-          echo ALLOWED_HOSTS="${{ secrets.ALLOWED_HOSTS }}" >> .env
+#          echo SECRET_KEY="${{ secrets.SECRET_KEY }}" >> .env
+#          echo DEBUG="${{ secrets.DEBUG }}" >> .env
+#          echo ALLOWED_HOSTS="${{ secrets.ALLOWED_HOSTS }}" >> .env
+
+          SECRET_KEY=${{ env.SECRET_KEY }}  >> .env
+          DEBUG=${{ env.DEBUG }}  >> .env
+          ALLOWED_HOSTS=${{ env.ALLOWED_HOSTS }}  >> .env
+          DB_ENGINE=${{ env.DB_ENGINE }}  >> .env
+          DB_NAME=${{ env.DB_NAME }}  >> .env
+          DB_HOST=${{ env.DB_HOST }}  >> .env
+          DB_PORT=${{ env.DB_PORT }}  >> .env
+          DB_USER=${{ env.DB_USER }}  >> .env
+          DB_PASSWORD=${{ env.DB_PASSWORD }}  >> .env
           cat .env
 
       - name: Testing
