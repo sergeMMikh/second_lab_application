@@ -40,9 +40,6 @@ jobs:
           pip install --upgrade pip |
           pip install -r requirements.txt
 
-#      - name: Linting of stocks_products
-#        run: flake8 electrochemistry_lab
-
       - name: Linting of code
         run: flake8
 
