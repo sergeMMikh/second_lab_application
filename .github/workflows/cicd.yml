@@ -43,7 +43,7 @@ jobs:
 #        run: flake8 electrochemistry_lab
 
       - name: Linting of logistic
-        run: flake8 main
+        run: flake8
 
 #      - name: Testing
 #        run: pytest
