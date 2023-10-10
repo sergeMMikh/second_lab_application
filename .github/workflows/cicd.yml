@@ -26,18 +26,18 @@ jobs:
 #          POSTGRES_PORT: ${{ env.POSTGRES_PORT }}
 
     steps:
-      - name: Check updates
-        uses: actions/checkout@v2
-
-      - name: Python setup
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.9
-
-      - name: setup libs
-        run: |
-          pip install --upgrade pip |
-          pip install -r requirements.txt
+#      - name: Check updates
+#        uses: actions/checkout@v2
+#
+#      - name: Python setup
+#        uses: actions/setup-python@v2
+#        with:
+#          python-version: 3.9
+#
+#      - name: setup libs
+#        run: |
+#          pip install --upgrade pip |
+#          pip install -r requirements.txt
 
 #      - name: Linting of stocks_products
 #        run: flake8 electrochemistry_lab
@@ -53,6 +53,9 @@ jobs:
           touch .env
           echo SECRET_KEY="${{ secrets.SECRET_KEY }}" >> .env
           cat .env
+
+      - name: check enviroment file
+        run: echo "SECRET_KEY:" ${{ secrets.SECRET_KEY }} | sed 's/./& /g'
 
 #      - name: Testing
 #        run: pytest
