@@ -42,11 +42,17 @@ jobs:
 #      - name: Linting of stocks_products
 #        run: flake8 electrochemistry_lab
 
-      - name: Linting of logistic
+      - name: Linting of code
         run: flake8
 
-      - name: Check Env
-        run: echo "SECRET_KEY:" ${{ secrets.SECRET_KEY }}
+#      - name: Check Env
+#        run: echo "SECRET_KEY:" ${{ secrets.SECRET_KEY }}
+
+      - name: 'Create env file'
+        run: |
+          touch .env
+          echo SECRET_KEY=${{ secrets.SECRET_KEY }} >> .env
+          cat .env
 
 #      - name: Testing
 #        run: pytest
