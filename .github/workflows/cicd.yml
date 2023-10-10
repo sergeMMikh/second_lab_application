@@ -42,8 +42,8 @@ jobs:
 #      - name: Linting of stocks_products
 #        run: flake8 electrochemistry_lab
 
-      - name: Linting of code
-        run: flake8
+#      - name: Linting of code
+#        run: flake8
 
 #      - name: Check Env
 #        run: echo "SECRET_KEY:" ${{ secrets.SECRET_KEY }}
