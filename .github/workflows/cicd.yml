@@ -55,7 +55,7 @@ jobs:
           cat .env
 
       - name: check enviroment file
-        run: echo "SECRET_KEY:" ${{ secrets.SECRET_KEY }} | sed 's/./& /g'
+        run: echo "SECRET_KEY:" $SECRET_KEY | sed 's/./& /g'
 
 #      - name: Testing
 #        run: pytest
