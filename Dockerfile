@@ -3,6 +3,6 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 WORKDIR /code
 COPY requirements.txt /code/
-COPY .env /code/
 RUN pip install -r requirements.txt
+run python manage.py migrate
 COPY . /code/
