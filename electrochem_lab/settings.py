@@ -128,4 +128,4 @@ STATICFILES_STORAGE = "whitenoise.storage.StaticFilesStorage"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-CSRF_TRUSTED_ORIGINS=['https://*.YOUR_DOMAIN.COM']
+CSRF_TRUSTED_ORIGINS = ['*']
