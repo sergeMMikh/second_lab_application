@@ -6,7 +6,7 @@ RUN python -m pip install --upgrade pip
 COPY . /code/
 
 RUN pip install --no-cache-dir --upgrade -r /src/requirements.txt
-RUN python manage.py migrate
+
 
 EXPOSE 8000
 
