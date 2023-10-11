@@ -8,6 +8,7 @@ def index(request):
 
 def about(request):
     return HttpResponse(
-        """<h2>This is an a new version of application for our solid state electrochemistry laboratory.</h2>
+        """<h2>This is an a new version of application for our 
+        solid state electrochemistry laboratory.</h2>
         <h4>Here I take into account last half of year experience and will extend
         a applicatin functional by addition of new equipment.</h4>""")
