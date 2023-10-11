@@ -3,8 +3,6 @@ WORKDIR /code
 
 RUN python -m pip install --upgrade pip
 
-COPY ./requirements.txt /src/requirements.txt
-COPY ./.env /src/.env
 COPY . /code/
 
 RUN pip install --no-cache-dir --upgrade -r /src/requirements.txt
