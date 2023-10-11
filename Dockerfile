@@ -12,7 +12,7 @@ RUN pip3 install --no-cache-dir --upgrade -r /src/requirements.txt
 COPY . /code/
 
 # Collect static files
-RUN python manage.py collectstatic --noinput
+# RUN python manage.py collectstatic --noinput
 
 
 EXPOSE 8000
