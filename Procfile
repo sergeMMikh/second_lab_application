@@ -1,4 +1,3 @@
-web: gunicorn electrochem_lab.wsgi
+web: python manage.py migrate && gunicorn electrochem_lab.wsgi
 
-release: python manage.py migrate
 
